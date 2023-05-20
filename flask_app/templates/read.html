@@ -18,7 +18,7 @@
         <h1 class="font-bold text-4xl mt-4">All Users</h1>
         <table class="border-2 border-zinc-500 mt-4">
             <thead>
-                <tr class="bg-amber-300">
+                <tr class="bg-zinc-800">
                     <th class="p-6 text-center">ID</th>
                     <th class="p-6 text-center">Full Name</th>
                     <th class="p-6 text-center">Email</th>
@@ -27,7 +27,11 @@
             </thead>
             <tbody>
                 {% for user in all_users %}
+                {% if user.id % 2 == 0 %}
+                <tr class="bg-amber-300">
+                {% else %}
                 <tr class="bg-amber-400">
+                {% endif %}
                     <td class="p-6 text-center">{{user.id}}</td>
                     <td class="p-6 text-center">{{user.first_name}} {{user.last_name}}</td>
                     <td class="p-6 text-center">{{user.email}}</td>
